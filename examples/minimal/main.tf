@@ -8,7 +8,7 @@ module "networking" {
 }
 
 module "firewall" {
-  source              = "../"
+  source              = "../../"
   resource_group_name = module.networking.virtual_network_resource_group_name
   virtual_network     = module.networking.virtual_network
 }
