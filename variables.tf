@@ -1,13 +1,10 @@
 #Required Variables
-variable "resource_group_name" {
-  type        = string
-  description = "The Resource Group in which to put the Azure Firewall resources"
-}
 
 variable "virtual_network" {
   type = object({
-    name                = string
-    resource_group_name = string
+    name                    = string
+    resource_group_name     = string
+    location                = string
   })
   description = "The Virtual Network in which the AzureFirewallSubnet exists within."
 }

@@ -11,16 +11,16 @@ module "naming" {
 
 resource "azurerm_public_ip" "firewall_pip" {
   name                = module.naming.public_ip.name
-  location            = data.azurerm_resource_group.base.location
-  resource_group_name = data.azurerm_resource_group.base.name
+  location            = var.virtual_network.location
+  resource_group_name = var.virtual_network.resource_group_name
   allocation_method   = "Static"
   sku                 = var.public_ip_sku
 }
 
 resource "azurerm_firewall" "firewall" {
   name                = module.naming.firewall.name
-  location            = data.azurerm_resource_group.base.location
-  resource_group_name = data.azurerm_resource_group.base.name
+  location            = var.virtual_network.location
+  resource_group_name = var.virtual_network.resource_group_name
 
   ip_configuration {
     name                 = module.naming.firewall_ip_configuration.name
