@@ -24,7 +24,7 @@ resource "azurerm_firewall" "firewall" {
 
   ip_configuration {
     name                 = module.naming.firewall_ip_configuration.name
-    subnet_id            = data.azurerm_subnet.firewall_subnet.id
+    subnet_id            = var.firewall_subnet_id
     public_ip_address_id = azurerm_public_ip.firewall_pip.id
   }
 }

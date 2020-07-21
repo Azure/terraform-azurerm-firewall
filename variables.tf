@@ -9,6 +9,11 @@ variable "virtual_network" {
   description = "The Virtual Network in which the AzureFirewallSubnet exists within."
 }
 
+variable "firewall_subnet_id" {
+  type        = string
+  description = "The firewall subnet id"
+}
+
 #Optional Variables
 variable "prefix" {
   type        = list(string)
